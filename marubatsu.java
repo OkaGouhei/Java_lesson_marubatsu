@@ -1,9 +1,9 @@
 import java.util.Scanner;
 import java.util.Random;
 public class marubatsu{
-  public static void Printcell(String[][]cell,int SideNum){
-    for(int i=0;i<SideNum;i++){
-      for(int j=0; j<SideNum;j++)
+  public static void printcell(String[][]cell,int sidenum){
+    for(int i=0;i<sidenum;i++){
+      for(int j=0; j<sidenum;j++)
       {
       System.out.print("|"+(cell[i][j]));
       }
@@ -13,14 +13,14 @@ public class marubatsu{
   public static void main(String[] args){
     Scanner scanner = new Scanner(System.in);
     System.out.println("盤面の列の数を指定してください。");
-    int SideNum = scanner.nextInt();
-    String[][]cell= new String[SideNum][SideNum];
-    for(int i=0;i<SideNum;i++){
-      for(int j=0; j<SideNum;j++){
+    int sidenum = scanner.nextInt();
+    String[][]cell= new String[sidenum][sidenum];
+    for(int i=0;i<sidenum;i++){
+      for(int j=0; j<sidenum;j++){
         cell[i][j] = " ";
       }
     }
-    for(int m=1;m<= SideNum*SideNum ;m++){
+    for(int m=1;m<= sidenum*sidenum ;m++){
       String player;
       if(m % 2 == 1){
         player = "○";
@@ -40,10 +40,10 @@ public class marubatsu{
         }
         else{
           Random rnd = new Random();
-          numA = rnd.nextInt(SideNum);
-          numB = rnd.nextInt(SideNum);
+          numA = rnd.nextInt(sidenum);
+          numB = rnd.nextInt(sidenum);
         }
-        if(numA<0 ||numA>= SideNum||numB<0 ||numB >= SideNum){
+        if(numA<0 ||numA>= sidenum||numB<0 ||numB >= sidenum){
           System.out.println("範囲外です");
         }
         else if (cell[numA][numB] != " "){
@@ -54,17 +54,17 @@ public class marubatsu{
         is_set = true;
         }
       }
-      Printcell(cell,SideNum);
+      printcell(cell,sidenum);
       //ここから勝敗の判定
-      row: for(int i=0; i<SideNum; i++){
-        for(int j=0; j<SideNum; j++){
+      row: for(int i=0; i<sidenum; i++){
+        for(int j=0; j<sidenum; j++){
          if(cell[i][j] != player)continue row;
         }
         System.out.println(player+"の勝ちです。");
         return;
       }
-      row: for(int j=0; j<SideNum; j++){
-        for(int i=0; i<SideNum; i++){
+      row: for(int j=0; j<sidenum; j++){
+        for(int i=0; i<sidenum; i++){
          if(cell[i][j] != player)continue row;
         }
         System.out.println(player+"の勝ちです。");
@@ -72,7 +72,7 @@ public class marubatsu{
       }
       //右下斜めの判定
       is_set = false;
-      for(int i=0;i<SideNum; i++){
+      for(int i=0;i<sidenum; i++){
         if(cell[i][i] != player){
           is_set = true;
         }
@@ -83,8 +83,8 @@ public class marubatsu{
       }
       //右上斜めの判定
       is_set = false;
-      for(int i=0;i<SideNum; i++){
-        if(cell[i][SideNum-1-i] != player){
+      for(int i=0;i<sidenum; i++){
+        if(cell[i][sidenum-1-i] != player){
           is_set = true;
         }
       }
