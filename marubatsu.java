@@ -12,8 +12,20 @@ public class marubatsu{
   }
   public static void main(String[] args){
     Scanner scanner = new Scanner(System.in);
-    System.out.println("盤面の列の数を指定してください。");
-    int sidenum = scanner.nextInt();
+
+    boolean is_set_banmen = false;
+    int sidenum = 1 ;
+    //変数sidenumは初期化されていない可能性があります。のエラーを回避するため sidenum に1を代入
+    while(!is_set_banmen){
+      System.out.println("盤面の列の数を指定してください。");
+      sidenum = scanner.nextInt();
+      if(sidenum >= 1){
+        is_set_banmen = true;
+      }
+      else{
+        System.out.println("1以上を入力してください。");
+      }
+    }
     String[][]cell= new String[sidenum][sidenum];
     for(int i=0;i<sidenum;i++){
       for(int j=0; j<sidenum;j++){
