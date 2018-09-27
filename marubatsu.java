@@ -59,7 +59,9 @@ public class marubatsu{
           System.out.println("範囲外です");
         }
         else if (cell[numA][numB] != " "){
+          if(player == "○"){
           System.out.println("すでに入力済みです。");
+          }
         }
         else{
         cell[numA][numB] = player ;
