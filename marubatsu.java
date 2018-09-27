@@ -34,12 +34,7 @@ public class marubatsu{
     }
     for(int m=1;m<= sidenum*sidenum ;m++){
       String player;
-      if(m % 2 == 1){
-        player = "○";
-      }
-      else{
-        player = "×";
-      }
+      player = (m % 2 == 1)? "○":"×";
       System.out.println(player+"の番です");
       System.out.println("数値を2つ入力してください。");
       boolean is_set_suuchi = false;
