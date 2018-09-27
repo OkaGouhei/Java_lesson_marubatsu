@@ -85,24 +85,24 @@ public class marubatsu{
         return;
       }
       //右下斜めの判定
-      is_set = false;
+      boolean is_set_shouhai = false;
       for(int i=0;i<sidenum; i++){
         if(cell[i][i] != player){
-          is_set = true;
+          is_set_shouhai = true;
         }
       }
-      if(is_set == false){
+      if(is_set_shouhai == false){
         System.out.println(player+"の勝ちです。");
         return;
       }
       //右上斜めの判定
-      is_set = false;
+      is_set_shouhai = false;
       for(int i=0;i<sidenum; i++){
         if(cell[i][sidenum-1-i] != player){
-          is_set = true;
+          is_set_shouhai = true;
         }
       }
-      if(is_set == false){
+      if(is_set_shouhai == false){
         System.out.println(player+"の勝ちです。");
         return;
       }
