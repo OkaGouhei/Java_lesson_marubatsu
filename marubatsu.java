@@ -42,8 +42,8 @@ public class marubatsu{
       }
       System.out.println(player+"の番です");
       System.out.println("数値を2つ入力してください。");
-      boolean is_set = false;
-      while(!is_set){
+      boolean is_set_suuchi = false;
+      while(!is_set_suuchi){
         int numA;
         int numB;
         if(m % 2 == 1){
@@ -65,7 +65,7 @@ public class marubatsu{
         }
         else{
         cell[numA][numB] = player ;
-        is_set = true;
+        is_set_suuchi = true;
         }
       }
       printcell(cell,sidenum);
