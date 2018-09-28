@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 public class marubatsu{
-  public static void printcell(String[][]cell,int sidenum){
+  public static void printcell(String[][] cell,int sidenum){
     for(int i=0;i<sidenum;i++){
       for(int j=0; j<sidenum;j++)
       {
@@ -26,7 +26,7 @@ public class marubatsu{
         System.out.println("1以上を入力してください。");
       }
     }
-    String[][]cell= new String[sidenum][sidenum];
+    String[][] cell= new String[sidenum][sidenum];
     for(int i=0;i<sidenum;i++){
       for(int j=0; j<sidenum;j++){
         cell[i][j] = " ";
